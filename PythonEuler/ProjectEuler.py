@@ -2504,6 +2504,9 @@ def removeFrom2DigitString(val,string):
 def pe33():
     # Digital cancelling fractions
     count = 0
+    numerator = []
+    denominator= []
+    acc=1
     for num in range(10,99):
         for den in range(num+1,100):
             # filter some tests:  a common number must exist in num and denom
@@ -2512,15 +2515,20 @@ def pe33():
                 tmp_d = removeFrom2DigitString(str(num)[0],str(den))
                 if( int(str(num)[1])/int(tmp_d) == num/den ):
                     print("FOUND:" + str(num) + "/" + str(den))
+                    numerator.append(num)
+                    denominator.append(den)
                     count += 1
             elif( str(den)[1] != '0' and str(num)[1] in str(den) ):
                 # check our cases
                 tmp_d = removeFrom2DigitString(str(num)[1],str(den))
                 if( int(str(num)[0])/int(tmp_d) == num/den ):
                     print("FOUND:" + str(num) + "/" + str(den))
+                    numerator.append(num)
+                    denominator.append(den)
                     count += 1
-
-    print("count",count)
+    for num in range(len(numerator)):
+        acc= acc * denominator[num]/numerator[num]
+    print("Answer: ",acc)
 
 def pe32():
     # Pandigital Products
@@ -3374,6 +3382,6 @@ def pe01():
     
 if __name__ == '__main__':
     print("GO")
-    out = pe131()
+    out = pe38()
 
 
