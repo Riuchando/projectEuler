@@ -1,12 +1,13 @@
 //Author: Stephen Kinser
 //for dealing with integers beyond 2^16 with maximum precision
+
 #include<iostream>
 #include<string>
 
 
 class bigNum{
 private:
-	int* myNum;// a large array or integers 
+	int* myNum;// a large array or integers
 	int digitAmount;//the highest order of 10 this integer is
 	int capacity;// defined at the beginning, arrays are the best way (simplest) to deal with it
 public:
@@ -83,7 +84,7 @@ public:
 		return *this;
 	}
 	bigNum& operator+(const bigNum& b){//adds two big nums together
-		
+
 		int k;//the position of the most signifigant digit
 		for (int i = 0; i < this->getSize(); i++){
 			myNum[i] = myNum[i] + b.myNum[i];//bassic integer addition
@@ -97,7 +98,7 @@ public:
 
 	bigNum& operator=(const bigNum& rhs){
 		int i; // the most signifigant digit
-		
+
 		for (i = 0; i < rhs.digitAmount; i++){
 			myNum[i] = rhs.myNum[i];
 		}
@@ -135,7 +136,7 @@ public:
 		*this = temp_two;
 		return *this;
 	}
-	
+
 };
 std::ostream& operator<<(std::ostream& os, const bigNum& obj){
 	os << obj.toString();
