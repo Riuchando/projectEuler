@@ -1,3 +1,4 @@
 # projectEuler
-Project Euler (some finished others not) for c++ Clojure and R
-Murphy is working on mainly python
+
+Project Euler (some finished others not) for various problems
+Instructions on how to run are included in each language's folder

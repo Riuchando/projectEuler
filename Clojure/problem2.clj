@@ -6,7 +6,7 @@
 
 (defn fib_map [n]
   (take-while (partial > n)
-    (map first (iterate (fn [[a b]] [b (+ a b)]) [0 1]))))
+              (map first (iterate (fn [[a b]] [b (+ a b)]) [0 1]))))
 
 
-(reduce +(filter #(= (mod % 2)0) (fib_map 4000000)))
+(println (reduce + (filter #(= (mod % 2) 0) (fib_map 4000000))))

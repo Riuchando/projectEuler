@@ -6,9 +6,7 @@
          factors '()
          start 2]
     (cond (< n start) factors
-          (= 0 (mod n start))(recur (/ n start) (conj factors start) (inc start))
+          (= 0 (mod n start)) (recur (/ n start) (conj factors start) (inc start))
           :else
-              (recur n factors (inc start))
-      )
-    ))
-(factor 600851475143)
+          (recur n factors (inc start)))))
+(println (factor 600851475143))

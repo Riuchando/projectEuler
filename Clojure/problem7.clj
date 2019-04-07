@@ -6,5 +6,5 @@
 (defn nth-prime [n]
   (last (take n (filter #(is-prime? %) (iterate inc 2)))))
 
-(nth-prime 10001)
+(println (nth-prime 10001))
 

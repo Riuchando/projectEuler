@@ -15,10 +15,11 @@
 ;need to update to have it store the length
 (defn Collatz [number]
   (cond (= number 1) number
-    ( = (mod number 2) 0) (Collatz (/ number 2))
+        (= (mod number 2) 0) (Collatz (/ number 2))
         :else
-        (Collatz ( + 1(* 3 number)))))
+        (Collatz (+ 1 (* 3 number)))))
 
 (def col
   (memoize Collatz))
-(map #(Collatz %) (range 13 1000000))
+
+; (println (map #(Collatz %) (range 13 1000000)))

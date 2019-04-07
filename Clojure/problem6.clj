@@ -8,9 +8,8 @@
   (reduce * (repeat n x)))
 
 (defn problem6 []
-(-
-(exp (/(* 100 101) 2)2)
-  (reduce + (map #(* % %)(range 101)))
-))
+  (-
+   (exp (/ (* 100 101) 2) 2)
+   (reduce + (map #(* % %) (range 101)))))
 
-(problem6)
+(pritnln problem6)
