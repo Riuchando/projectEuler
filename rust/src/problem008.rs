@@ -1,10 +1,10 @@
+use std::collections::VecDeque;
 use std::fs::File;
 use std::io::BufRead;
 use std::io::BufReader;
 use std::io::Error;
 use std::io::ErrorKind;
 use std::vec::Vec;
-use std::collections::VecDeque;
 
 pub fn run() -> Result<u64, Error> {
     // let data = fs::read_to_string("resources/problem008.txt").expect("Unable to read file");
@@ -31,17 +31,17 @@ pub fn run() -> Result<u64, Error> {
             }
         }
     }
-    println!("{:?}", digits);
-    let max_buf_size  = 13;
+    // println!("{:?}", digits);
+    let max_buf_size = 13;
     let mut buf = VecDeque::new();
     let mut max_running_multiplier = 0;
     for digit in digits {
-        if buf.len() >=  max_buf_size {
+        if buf.len() >= max_buf_size {
             buf.pop_front();
         }
         buf.push_back(digit);
         // println!("{:?}",buf);
-        let running_multiplier = buf.iter().fold(1, |acc, curr| acc*curr);
+        let running_multiplier = buf.iter().fold(1, |acc, curr| acc * curr);
         if running_multiplier > max_running_multiplier {
             max_running_multiplier = running_multiplier;
         }

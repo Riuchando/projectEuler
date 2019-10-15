@@ -9,6 +9,8 @@ mod problem005;
 mod problem006;
 mod problem007;
 mod problem008;
+mod problem009;
+mod problem010;
 
 fn main() -> Result<(), Error> {
     let args: Vec<String> = env::args().collect();
@@ -35,7 +37,13 @@ fn main() -> Result<(), Error> {
             println!("{}", problem007::run());
         }
         "problem8" => {
-            println!("{:?}", problem008::run());
+            println!("{}", problem008::run()?);
+        }
+        "problem9" => {
+            println!("{}", problem009::run());
+        }
+        "problem10" => {
+            println!("{}", problem010::run());
         }
         _ => println!("{}", "invalid argument"),
     }
