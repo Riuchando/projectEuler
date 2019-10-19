@@ -15,7 +15,7 @@ fn generate_primes(prime_max: u64) -> Vec<u64> {
 }
 
 fn is_prime(number: u64, prime_list: &Vec<u64>) -> bool {
-    let sqrt =(number as f64 ).sqrt().ceil() as u64;
+    let sqrt = (number as f64).sqrt().ceil() as u64;
     for prime in prime_list {
         if number % prime == 0 {
             return false;

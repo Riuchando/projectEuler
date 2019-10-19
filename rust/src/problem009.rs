@@ -21,7 +21,7 @@ fn pythagorean_triplets(limit: u32) -> Vec<(u32, u32, u32)> {
 pub fn run() -> u32 {
     let triplets = pythagorean_triplets(1000);
     // println!("{:?}", triplets);
-    
+
     match triplets.iter().find(|(a, b, c)| a + b + c == 1000) {
         Some((a, b, c)) => a * b * c,
         None => 0,

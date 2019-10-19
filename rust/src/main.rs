@@ -1,3 +1,5 @@
+extern crate num_bigint;
+
 use std::env;
 use std::io::Error;
 
@@ -11,6 +13,9 @@ mod problem007;
 mod problem008;
 mod problem009;
 mod problem010;
+mod problem011;
+mod problem012;
+mod problem013;
 
 fn main() -> Result<(), Error> {
     let args: Vec<String> = env::args().collect();
@@ -44,6 +49,15 @@ fn main() -> Result<(), Error> {
         }
         "problem10" => {
             println!("{}", problem010::run());
+        }
+        "problem11" => {
+            println!("{}", problem011::run()?);
+        }
+        "problem12" => {
+            println!("{}", problem012::run());
+        }
+        "problem13" => {
+            println!("{}", problem013::run()?);
         }
         _ => println!("{}", "invalid argument"),
     }
