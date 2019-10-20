@@ -7,9 +7,6 @@ use std::io::ErrorKind;
 use std::vec::Vec;
 
 pub fn run() -> Result<u64, Error> {
-    // let data = fs::read_to_string("resources/problem008.txt").expect("Unable to read file");
-    // println!("{}", data);
-
     let f = File::open("resources/problem008.txt")?;
     let f = BufReader::new(f);
     let mut digits: Vec<u64> = Vec::new();
