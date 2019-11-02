@@ -4,16 +4,16 @@ fn choose(n: u64, k: u64) -> u64 {
     }
     let mut k = k;
     if k * 2 > n {
-        k = n-k;
+        k = n - k;
     }
-    
+
     if k == 0 {
         return 1;
     }
 
     let mut result = n;
-    for i in 2..k+1 {
-        result = result * (n - i +1)/i;
+    for i in 2..k + 1 {
+        result = result * (n - i + 1) / i;
     }
     result
 }
